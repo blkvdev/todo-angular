@@ -31,6 +31,20 @@ export class TodoStore {
 
         this.updateTodos([...this.todosState(), newTodo]);
     }
+
+    toggle(id: number): void{
+        const updateTodos = this.todosState().map((todo) =>
+            todo.id === id 
+                ? {...todo, completed: !todo.completed}
+                :todo
+        );
+        this.updateTodos(updateTodos);
+    }
+
+    remove(id: number): void{
+        const updateTodos = this.todosState().filter((todo) => todo.id !== id);
+        this.updateTodos(updateTodos);
+    }
     
     private updateTodos(todos: Todo[]): void {
         this.todosState.set(todos);
