@@ -9,7 +9,7 @@ import { TodoItem } from '../todo-item/todo-item';
   styleUrl: './todo-list.css',
 })
 export class TodoList {
-    readonly todos = input.required<Todo>;
+  readonly todos = input.required<Todo[]>();
   readonly todoToggled = output<number>();
   readonly todoRemoved = output<number>();
 }

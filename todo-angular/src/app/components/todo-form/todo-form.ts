@@ -11,9 +11,8 @@ export class TodoForm {
   readonly todoAdded = output<string>();
   title = '';
 
-  submit(): void{
+  submit(): void {
     const normalizedTitle = this.title.trim();
-
     if (!normalizedTitle) {
       return;
     }
